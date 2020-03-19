@@ -1,11 +1,12 @@
 import os
+folders = []
+files =[]
 
 directory = ".."
-print("folders")
-for entry in os.listdir(directory):
-    if os.path.isdir(os.path.join(directory, entry)):
-        print(entry)
-print("\n files")
-for entry in os.listdir(directory):
-    if os.path.isfile(os.path.join(directory, entry)):
-        print(entry)
+for folder in os.listdir(directory):
+    if os.path.isdir(os.path.join(directory, folder)):
+        folders.append(folder)
+
+for file in os.listdir(directory):
+    if os.path.isfile(os.path.join(directory, file)):
+        files.append(file)
