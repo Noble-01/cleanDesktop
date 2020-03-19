@@ -1,4 +1,5 @@
 import os
+import shutil
 folders = []
 files =[]
 directory = ".."
@@ -16,3 +17,6 @@ for folder in os.listdir(directory):
 for file in os.listdir(directory):
     if os.path.isfile(os.path.join(directory, file)):
         files.append(file)
+
+for folderNames in folders:
+    print(folderNames)
