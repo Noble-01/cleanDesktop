@@ -5,16 +5,16 @@ import stat
 folders = []
 files =[]
 directory = ".."
-checkDir = "../Folders"
-if not os.path.exists(checkDir):
-    os.mkdir(checkDir)
-    print("directory", checkDir , "created")
-else:
-    print("directory already exists")
+checkDirFolder = "../Folders"
+checkDirFile = "../Files"
+if not os.path.exists(checkDirFolder):
+    os.mkdir(checkDirFolder)
+if not os.path.exists(checkDirFile):
+    os.mkdir(checkDirFile)
 
 for folder in os.listdir(directory):
     if os.path.isdir(os.path.join(directory, folder)):
-        if folder == "cleanDesktop":
+        if folder == "cleanDesktop" or "Folders" or "Files" :
             pass
         else:
             folders.append(folder)
@@ -24,4 +24,4 @@ for file in os.listdir(directory):
         files.append(file)
 
 for i in folders:
-    shutil.move("../"+i, checkDir)
+    shutil.move("../"+i, checkDirFolder)
