@@ -1,5 +1,7 @@
 import os
 import shutil
+import stat
+
 folders = []
 files =[]
 directory = ".."
@@ -12,11 +14,14 @@ else:
 
 for folder in os.listdir(directory):
     if os.path.isdir(os.path.join(directory, folder)):
-        folders.append(folder)
+        if folder == "cleanDesktop":
+            pass
+        else:
+            folders.append(folder)
 
 for file in os.listdir(directory):
     if os.path.isfile(os.path.join(directory, file)):
         files.append(file)
 
-for folderNames in folders:
-    print(folderNames)
+for i in folders:
+    shutil.move("../"+i, checkDir)
