@@ -25,3 +25,5 @@ for file in os.listdir(directory):
 
 for i in folders:
     shutil.move("../"+i, checkDirFolder)
+for i in files:
+    shutil.move("../"+i, checkDirFile)
