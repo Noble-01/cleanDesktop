@@ -1,7 +1,8 @@
 import os
 import shutil
 import stat
-
+from datetime import date
+todayDate = date.today()
 folders = []
 files =[]
 safeFolders = ["cleanDesktop", "Folders", "Files"]
@@ -17,7 +18,7 @@ for folder in os.listdir(directory):
     if os.path.isdir(os.path.join(directory, folder)):
         if folder in safeFolders:
             pass
-        else:
+        else if:
             folders.append(folder)
 
 for file in os.listdir(directory):
@@ -29,3 +30,4 @@ for i in folders:
    shutil.move("../"+i, checkDirFolder)
 for i in files:
     shutil.move("../"+i, checkDirFile)
+print(todayDate.strftime("%d-%m-%Y"))
