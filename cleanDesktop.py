@@ -18,7 +18,7 @@ for folder in os.listdir(directory):
     if os.path.isdir(os.path.join(directory, folder)):
         if folder in safeFolders:
             pass
-        else if:
+        else:
             folders.append(folder)
 
 for file in os.listdir(directory):
