@@ -29,12 +29,14 @@ try:
     for i in folders:
         if(os.path.isdir(checkDirFolder +"/"+i)):
             print("folder exists in folder already")
+            continue
         else:
             shutil.move("../"+i, checkDirFolder)
 
     for i in files:
         if(os.path.isfile(checkDirFile +"/"+i)):
              print("file exists in folder already")
+             continue
         else:
             shutil.move("../"+i, checkDirFile)
     pass
