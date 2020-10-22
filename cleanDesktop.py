@@ -25,9 +25,15 @@ for file in os.listdir(directory):
     if os.path.isfile(os.path.join(directory, file)):
         files.append(file)
 
+try:
+    for i in folders:
+        shutil.move("../"+i, checkDirFolder)
 
-for i in folders:
-   shutil.move("../"+i, checkDirFolder)
-for i in files:
-    shutil.move("../"+i, checkDirFile)
+    for i in files:
+        shutil.move("../"+i, checkDirFile)
+    pass
+except:
+    print("error")
+    pass
+
 print(todayDate.strftime("%d-%m-%Y"))
