@@ -27,10 +27,16 @@ for file in os.listdir(directory):
 
 try:
     for i in folders:
-        shutil.move("../"+i, checkDirFolder)
+        if(os.path.isdir(checkDirFolder +"/"+i)):
+            print("folder exists in folder already")
+        else:
+            shutil.move("../"+i, checkDirFolder)
 
     for i in files:
-        shutil.move("../"+i, checkDirFile)
+        if(os.path.isfile(checkDirFile +"/"+i)):
+             print("file exists in folder already")
+        else:
+            shutil.move("../"+i, checkDirFile)
     pass
 except:
     print("error")
